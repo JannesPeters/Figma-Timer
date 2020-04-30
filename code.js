@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const delay = ms => new Promise(res => setTimeout(res, ms));
 var activeTimer = 0;
 const secondsSet = [86400, 3600, 60, 1];
-const progressBar = figma.createRectangle();
 var pause = 0;
 var reset = 0;
 var userSetSeconds = 0;
@@ -128,7 +127,7 @@ function startTimer(node, seconds, template, startsWithTimer) {
         var timerID = activeTimer;
         var keepItRunning = 1;
         var secondsToGo = seconds;
-        var newText = "not set";
+        var newText = "";
         figma.ui.postMessage(["start timer", "0:00", timerID]);
         while (keepItRunning > 0) {
             // checking if reset was clicked by user and if so resetting all timers
